@@ -66,8 +66,6 @@ router.put('/:id', async (req, res) => {
   }
 });
 
-
-
 // Delete project (Admin only)
 router.delete('/:id', async (req, res) => {
   try {
@@ -78,6 +76,35 @@ router.delete('/:id', async (req, res) => {
     res.json({ message: 'Project deleted successfully' });
   } catch (error) {
     res.status(500).json({ message: error.message });
+  }
+});
+
+// Get all published projects
+router.get('/', async (req, res) => {
+  try {
+    const projects = await Project.find({ status: 'published' })
+      .sort({ featured: -1, order: 1, createdAt: -1 });
+    res.json(projects);
+  } catch (error) {
+    console.error('Error fetching projects:', error);
+    res.status(500).json({ 
+      message: 'Failed to fetch projects',
+      error: error.message 
+    });
+  }
+});
+
+// Increment project views
+router.post('/:id/views', async (req, res) => {
+  try {
+    const project = await Project.findById(req.params.id);
+    if (!project) {
+      return res.status(404).json({ message: 'Project not found' });
+    }
+    await project.incrementViews();
+    res.json({ message: 'Views updated successfully' });
+  } catch (err) {
+    res.status(500).json({ message: err.message });
   }
 });
 
