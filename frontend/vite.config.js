@@ -6,6 +6,10 @@ import tailwindcss from 'tailwindcss'
 export default defineConfig({
   plugins: [react(), tailwindcss()],
   base: '/Portfolio_MERN/',
+  build: {
+    target: 'esnext',
+    minify: 'esbuild'
+  },
   server: {
     proxy: {
       '/api': {

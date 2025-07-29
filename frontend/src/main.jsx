@@ -87,14 +87,13 @@ const Root = () => (
 
 // Performance monitoring
 if (process.env.NODE_ENV === 'production') {
-  try {
-    const { onCLS, onFID, onLCP } = await import('web-vitals')
+  import('web-vitals').then(({ onCLS, onFID, onLCP }) => {
     onCLS(console.log)
     onFID(console.log)
     onLCP(console.log)
-  } catch (err) {
+  }).catch(err => {
     console.error('Error loading web-vitals:', err)
-  }
+  })
 }
 
 // Mount the app
