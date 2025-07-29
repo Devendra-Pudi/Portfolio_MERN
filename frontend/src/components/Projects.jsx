@@ -11,8 +11,8 @@ const Projects = () => {
       image: "/projects/weather.jpg",
       technologies: ["React", "JavaScript", "OpenWeather API", "CSS", "HTML"],
       category: "Frontend",
-      github: "https://github.com/yourusername/weather-app",
-      live: "https://weather-app-demo.netlify.app",
+      github: "https://github.com/Devendra-Pudi/Weather-App",
+      live: "https://weather-app-by-devendra.netlify.app/",
       featured: true,
       highlights: [
         "Real-time weather data integration",
@@ -28,8 +28,8 @@ const Projects = () => {
       image: "/projects/task-manager.jpg",
       technologies: ["MongoDB", "Express.js", "React", "Node.js", "Redux"],
       category: "Full Stack",
-      github: "https://github.com/yourusername/task-manager",
-      live: "https://task-manager-demo.herokuapp.com",
+      github: "https://github.com/Devendra-Pudi/Task_Magic_App",
+      live: "https://taskmagic-app-devendra-pudi.netlify.app/",
       featured: true,
       highlights: [
         "User authentication and authorization",
@@ -62,7 +62,7 @@ const Projects = () => {
       image: "/projects/face-detection.jpg",
       technologies: ["Python", "OpenCV", "TensorFlow", "Deep Learning", "Computer Vision","YOLO"],
       category: "Machine Learning",
-      github: "https://github.com/yourusername/face-detection",
+      github: "https://github.com/Devendra-Pudi/Face-Detection-Project",
       live: null,
       featured: true,
       highlights: [
@@ -79,7 +79,7 @@ const Projects = () => {
       image: "/projects/fake-news.jpg",
       technologies: ["Python", "Scikit-learn", "NLTK", "TensorFlow", "NLP"],
       category: "Machine Learning",
-      github: "https://github.com/yourusername/fake-news-detection",
+      github: "https://github.com/Devendra-Pudi/fake-news-detection-using-NLP",
       live: null,
       featured: true,
       highlights: [
@@ -96,8 +96,8 @@ const Projects = () => {
       image: "/projects/spam-detection.jpg",
       technologies: ["Python", "Scikit-learn", "Pandas", "Natural Language Processing", "Machine Learning"],
       category: "Machine Learning",
-      github: "https://github.com/yourusername/spam-classifier",
-      live: null,
+      github: "https://github.com/Devendra-Pudi/Spam-Mail-Classification-using-NLP-and-ML",
+      live: "https://spam-mail-classifier-project-by-devendra.streamlit.app/",
       featured: false,
       highlights: [
         "Email content analysis",

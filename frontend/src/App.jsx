@@ -1,7 +1,6 @@
 import React, { useState, useEffect, Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Loader } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 // Lazy load components
@@ -56,7 +55,7 @@ const MainLayout = ({ children, darkMode, toggleDarkMode }) => {
         {children}
       </main>
       <Footer />
-      
+
 
     </div>
   );
