@@ -5,12 +5,20 @@ const Contact = require('../models/Contact');
 // Submit contact form
 router.post('/', async (req, res) => {
   try {
+    console.log('Received contact form submission:', req.body);
     const { name, email, subject, message } = req.body;
     
     // Validation
     if (!name || !email || !subject || !message) {
+      console.log('Validation failed:', { name, email, subject, message });
       return res.status(400).json({ 
-        message: 'All fields are required' 
+        message: 'All fields are required',
+        missingFields: {
+          name: !name,
+          email: !email,
+          subject: !subject,
+          message: !message
+        }
       });
     }
     
@@ -21,14 +29,21 @@ router.post('/', async (req, res) => {
       message
     });
     
+    console.log('Attempting to save contact:', contact);
     const savedContact = await contact.save();
+    console.log('Contact saved successfully:', savedContact);
     
     res.status(201).json({
       message: 'Message sent successfully!',
       contact: savedContact
     });
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    console.error('Contact form error:', error);
+    res.status(500).json({ 
+      message: 'Failed to save contact message',
+      error: error.message,
+      stack: process.env.NODE_ENV === 'development' ? error.stack : undefined
+    });
   }
 });
 
@@ -38,7 +53,11 @@ router.get('/', async (req, res) => {
     const contacts = await Contact.find().sort({ createdAt: -1 });
     res.json(contacts);
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    console.error('Error fetching contacts:', error);
+    res.status(500).json({ 
+      message: 'Failed to fetch contacts',
+      error: error.message 
+    });
   }
 });
 
@@ -59,7 +78,11 @@ router.patch('/:id/status', async (req, res) => {
     
     res.json(contact);
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    console.error('Error updating contact status:', error);
+    res.status(500).json({ 
+      message: 'Failed to update contact status',
+      error: error.message 
+    });
   }
 });
 
