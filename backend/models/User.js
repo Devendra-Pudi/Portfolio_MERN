@@ -3,7 +3,9 @@ const bcrypt = require('bcryptjs');
 
 const UserSchema = new mongoose.Schema({
   username: { type: String, required: true, unique: true },
-  password: { type: String, required: true }
+  password: { type: String, required: true },
+  createdAt: { type: Date, default: Date.now },
+  lastLogin: { type: Date }
 });
 
 // Password hashing
@@ -14,8 +16,14 @@ UserSchema.pre('save', async function(next) {
 });
 
 // Password comparison
-UserSchema.methods.comparePassword = function(candidatePassword) {
+UserSchema.methods.comparePassword = async function(candidatePassword) {
   return bcrypt.compare(candidatePassword, this.password);
+};
+
+// Update last login
+UserSchema.methods.updateLastLogin = function() {
+  this.lastLogin = new Date();
+  return this.save();
 };
 
 module.exports = mongoose.model('User', UserSchema);
