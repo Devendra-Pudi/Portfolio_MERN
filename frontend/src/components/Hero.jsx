@@ -122,7 +122,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="min-h-screen flex flex-col justify-center items-center relative overflow-hidden bg-white dark:bg-gray-900">
+    <section id="hero" className="min-h-screen flex flex-col justify-center items-center relative overflow-hidden bg-white dark:bg-gray-900">
       {/* Background Animation */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 dark:from-gray-900 dark:via-blue-900 dark:to-indigo-900">
         <div className="absolute inset-0">

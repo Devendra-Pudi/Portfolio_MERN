@@ -7,6 +7,22 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
 
+  const handleSmoothScroll = (e, href) => {
+    e.preventDefault();
+    const targetId = href.replace('#', '');
+    const targetElement = document.getElementById(targetId);
+    
+    if (targetElement) {
+      targetElement.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+    
+    // Close mobile menu if open
+    setIsOpen(false);
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       const offset = window.scrollY;
@@ -63,7 +79,8 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
           {/* Logo */}
           <motion.a
             href="#hero"
-            className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
+            onClick={(e) => handleSmoothScroll(e, '#hero')}
+            className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent cursor-pointer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -76,7 +93,8 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
               <motion.a
                 key={item.name}
                 href={item.href}
-                className="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors"
+                onClick={(e) => handleSmoothScroll(e, item.href)}
+                className="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors cursor-pointer"
                 whileHover={{ y: -2 }}
                 whileTap={{ y: 0 }}
               >
@@ -137,8 +155,8 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
                   <motion.a
                     key={item.name}
                     href={item.href}
-                    className="block py-2 text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors"
-                    onClick={() => setIsOpen(false)}
+                    className="block py-2 text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors cursor-pointer"
+                    onClick={(e) => handleSmoothScroll(e, item.href)}
                     whileHover={{ x: 4 }}
                   >
                     {item.name}
