@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronDown, Download, ExternalLink, Github, Linkedin, Mail, Award, Code, Brain, Zap } from 'lucide-react';
+import profileImage from '../assets/MY DP.jpg';
 
 const Hero = () => {
   const [text, setText] = useState('');
@@ -163,7 +164,7 @@ const Hero = () => {
             >
               <div className="absolute inset-0 bg-gradient-to-tr from-primary to-secondary opacity-20 rounded-full transform rotate-6" />
               <img
-                src="/src/assets/MY DP.jpg"
+                src={profileImage}
                 alt="Profile"
                 className="w-full h-full object-cover rounded-full relative z-10 shadow-xl"
               />

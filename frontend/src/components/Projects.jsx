@@ -2,13 +2,23 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Github, ExternalLink } from 'lucide-react';
 
+// Import project images
+import weatherImg from '../assets/projects/weather.jpg';
+import taskManagerImg from '../assets/projects/task-manager.jpg';
+import aiChatbotImg from '../assets/projects/ai-chatbot.jpg';
+import blogApiImg from '../assets/projects/blog-api.jpg';
+import ecommerceImg from '../assets/projects/ecommerce.jpg';
+import faceDetectionImg from '../assets/projects/face-detection.jpg';
+import fakeNewsImg from '../assets/projects/fake-news.jpg';
+import spamDetectionImg from '../assets/projects/spam-detection.jpg';
+
 const Projects = () => {
   const projects = [
     {
       id: 1,
       title: "Weather App",
       description: "A real-time weather application that provides current weather conditions, forecasts, and weather alerts for any location worldwide. Built with React and OpenWeather API.",
-      image: "/projects/weather.jpg",
+      image: weatherImg,
       technologies: ["React", "JavaScript", "OpenWeather API", "CSS", "HTML"],
       category: "Frontend",
       github: "https://github.com/Devendra-Pudi/Weather-App",
@@ -25,7 +35,7 @@ const Projects = () => {
       id: 2,
       title: "Task Magic (Task Management System)",
       description: "A comprehensive task management system with features like task creation, assignment, due dates, priority levels, and status tracking. Built with MERN stack.",
-      image: "/projects/task-manager.jpg",
+      image: taskManagerImg,
       technologies: ["MongoDB", "Express.js", "React", "Node.js", "Redux"],
       category: "Full Stack",
       github: "https://github.com/Devendra-Pudi/Task_Magic_App",
@@ -42,7 +52,7 @@ const Projects = () => {
       id: 3,
       title: "AI Chatbot Web Application",
       description: "An interactive AI-powered chatbot web application that can answer user queries, provide information, and engage in natural language conversations. Built with React for the frontend and integrated with OpenAI's GPT API.",
-      image: "/projects/ai-chatbot1.jpg",
+      image: aiChatbotImg,
       technologies: ["React", "Node.js", "Express.js", "OpenAI API", "Socket.io"],
       category: "Full Stack",
       github: "https://github.com/yourusername/ai-chatbot-webapp",
@@ -59,7 +69,7 @@ const Projects = () => {
       id: 4,
       title: "Face Detection System",
       description: "An advanced face detection system using deep learning that can identify and track faces in real-time from images and video streams. Built with Python and OpenCV.",
-      image: "/projects/face-detection.jpg",
+      image: faceDetectionImg,
       technologies: ["Python", "OpenCV", "TensorFlow", "Deep Learning", "Computer Vision","YOLO"],
       category: "Machine Learning",
       github: "https://github.com/Devendra-Pudi/Face-Detection-Project",
@@ -76,7 +86,7 @@ const Projects = () => {
       id: 5,
       title: "Fake News Detection",
       description: "An intelligent system that uses Natural Language Processing and Machine Learning to identify and classify fake news articles with high accuracy.",
-      image: "/projects/fake-news.jpg",
+      image: fakeNewsImg,
       technologies: ["Python", "Scikit-learn", "NLTK", "TensorFlow", "NLP"],
       category: "Machine Learning",
       github: "https://github.com/Devendra-Pudi/fake-news-detection-using-NLP",
@@ -93,7 +103,7 @@ const Projects = () => {
       id: 6,
       title: "Spam Mail Classification",
       description: "An email classification system that uses machine learning to automatically detect and filter spam emails with high precision and recall rates.",
-      image: "/projects/spam-detection.jpg",
+      image: spamDetectionImg,
       technologies: ["Python", "Scikit-learn", "Pandas", "Natural Language Processing", "Machine Learning"],
       category: "Machine Learning",
       github: "https://github.com/Devendra-Pudi/Spam-Mail-Classification-using-NLP-and-ML",

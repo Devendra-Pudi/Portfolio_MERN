@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://devendra-pudi.github.io/Portfolio_MERN",
+  "homepage": "https://Devendra-Pudi.github.io/Portfolio_MERN",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
