@@ -5,9 +5,7 @@ import { Github, ExternalLink } from 'lucide-react';
 // Import project images
 import weatherImg from '../assets/projects/weather.jpg';
 import taskManagerImg from '../assets/projects/task-manager.jpg';
-import aiChatbotImg from '../assets/projects/ai-chatbot.jpg';
-import blogApiImg from '../assets/projects/blog-api.jpg';
-import ecommerceImg from '../assets/projects/ecommerce.jpg';
+import aiChatbotImg from '../assets/projects/ai-chatbot1.jpg';
 import faceDetectionImg from '../assets/projects/face-detection.jpg';
 import fakeNewsImg from '../assets/projects/fake-news.jpg';
 import spamDetectionImg from '../assets/projects/spam-detection.jpg';
