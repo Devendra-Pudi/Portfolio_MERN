@@ -6,6 +6,12 @@ A modern, responsive portfolio website built with the MERN stack (MongoDB, Expre
 ![Version](https://img.shields.io/badge/Version-1.0.0-blue)
 ![License](https://img.shields.io/badge/License-ISC-yellow)
 
+## 🌐 Live Demo
+
+🔗 **[View Live Portfolio](https://devendra-pudi.github.io/Portfolio_MERN/)** - Experience the full functionality
+
+> **Note:** The live demo showcases all features including dynamic project loading, contact form, and responsive design across all devices.
+
 ## ✨ Features
 
 ### 🎨 Frontend Features
