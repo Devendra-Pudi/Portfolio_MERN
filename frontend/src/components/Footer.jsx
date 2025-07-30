@@ -22,7 +22,7 @@ const Footer = () => {
               Devendra Pudi
             </motion.h3>
             <p className="mt-4 text-gray-600 dark:text-gray-400">
-              Full Stack Developer passionate about creating impactful web applications
+              Full Stack Developer passionate about creating impactful web applications and Machine Leaning Models
             </p>
           </div>
 

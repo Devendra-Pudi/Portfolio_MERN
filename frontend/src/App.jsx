@@ -1,7 +1,5 @@
 import React, { useState, useEffect, Suspense } from 'react';
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 // Lazy load components
 const Navbar = React.lazy(() => import('./components/Navbar'));
@@ -92,50 +90,22 @@ function App() {
   }
 
   return (
-    <Router>
-      <div className={`${darkMode ? 'dark' : ''} transition-colors duration-300`}>
-        <div className="bg-white dark:bg-gray-900 text-gray-900 dark:text-white min-h-screen">
-          <AnimatePresence mode="wait">
-            <Suspense fallback={<LoadingSpinner />}>
-              <Routes>
-                {/* Main Route */}
-                <Route
-                  path="/"
-                  element={
-                    <MainLayout darkMode={darkMode} toggleDarkMode={toggleDarkMode}>
-                      <Hero />
-                      <About />
-                      <Internships />
-                      <Skills />
-                      <Projects />
-                      <Education />
-                      <Certifications />
-                      <Contact />
-                    </MainLayout>
-                  }
-                />
-
-                {/* 404 Route */}
-                <Route
-                  path="*"
-                  element={
-                    <div className="min-h-screen flex items-center justify-center">
-                      <div className="text-center">
-                        <h1 className="text-6xl font-bold mb-4">404</h1>
-                        <p className="text-xl mb-4">Page not found</p>
-                        <Link to="/" className="text-blue-500 hover:text-blue-600">
-                          Go back home
-                        </Link>
-                      </div>
-                    </div>
-                  }
-                />
-              </Routes>
-            </Suspense>
-          </AnimatePresence>
-        </div>
+    <div className={`${darkMode ? 'dark' : ''} transition-colors duration-300`}>
+      <div className="bg-white dark:bg-gray-900 text-gray-900 dark:text-white min-h-screen">
+        <Suspense fallback={<LoadingSpinner />}>
+          <MainLayout darkMode={darkMode} toggleDarkMode={toggleDarkMode}>
+            <Hero />
+            <About />
+            <Internships />
+            <Skills />
+            <Projects />
+            <Education />
+            <Certifications />
+            <Contact />
+          </MainLayout>
+        </Suspense>
       </div>
-    </Router>
+    </div>
   );
 }
 

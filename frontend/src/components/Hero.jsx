@@ -48,9 +48,9 @@ const Hero = () => {
   }
 
   const socialLinks = [
-    { icon: Github, href: 'https://github.com', label: 'GitHub' },
-    { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
-    { icon: Mail, href: 'mailto:your.email@example.com', label: 'Email' }
+    { icon: Github, href: 'https://github.com/Devendra-Pudi', label: 'GitHub' },
+    { icon: Linkedin, href: 'https://linkedin.com/devendra-prasad-pudi', label: 'LinkedIn' },
+    { icon: Mail, href: 'mailto:pudidevendraprasad@gmail.com', label: 'Email' }
   ];
 
   const achievements = [
